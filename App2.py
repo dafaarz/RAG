@@ -28,7 +28,7 @@ llm_model = ChatOpenAI(model="gpt-4-mini", temperature=0)
 db_vector = Chroma(persist_directory=CHROMA_PATH, embedding_function=embedding_model)
 
 def upload_pdf(file):
-    os.makedirs(DATA_PATH, exist_ok=True)  # Ensure folder exists
+    os.makedirs(DATA_PATH, exist_ok=True)
     with open(os.path.join(DATA_PATH, file.name), "wb") as f:
         f.write(file.getbuffer())
 
