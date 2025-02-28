@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Knowledge Base</title>
+</head>
+<body>
+    <h2>Select the knowledge base you want to use</h2>
+    <form method="post">
+        {% csrf_token %}
+        <input type="radio" name="knowledge" value="office_rules" required> Office Rules <br>
+        <input type="radio" name="knowledge" value="worker_details" required> Worker Details <br>
+        <input type="radio" name="knowledge" value="both" required> Both <br>
+        <button type="submit">Proceed</button>
+    </form>
+</body>
+</html>
