@@ -1,3 +1,5 @@
+#IGNORE INI UNTUK APP STREAMLIT
+
 import streamlit as st
 from langchain_community.document_loaders import PyPDFDirectoryLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
