@@ -1,16 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Select Knowledge Base</title>
-</head>
-<body>
-    <h2>Select the knowledge base you want to use</h2>
-    <form method="post">
-        {% csrf_token %}
-        <input type="radio" name="knowledge" value="office_rules" required> Office Rules <br>
-        <input type="radio" name="knowledge" value="worker_details" required> Worker Details <br>
-        <input type="radio" name="knowledge" value="both" required> Both <br>
-        <button type="submit">Proceed</button>
-    </form>
-</body>
-</html>
+<form method="POST" action="{% url 'set_knowledge' %}" style="max-width: 400px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1); background: #f9f9f9;">
+    {% csrf_token %}
+    <h3 style="text-align: center; margin-bottom: 15px;">Select Knowledge Base</h3>
+
+    <label style="display: block; padding: 8px; border-radius: 5px; cursor: pointer;">
+        <input type="checkbox" name="knowledge" value="user_data" checked> My Uploaded PDFs
+    </label>
+
+    <label style="display: block; padding: 8px; border-radius: 5px; cursor: pointer;">
+        <input type="checkbox" name="knowledge" value="office_rules"> Office Rules
+    </label>
+
+    <label style="display: block; padding: 8px; border-radius: 5px; cursor: pointer;">
+        <input type="checkbox" name="knowledge" value="worker_details"> Worker Details
+    </label>
+
+    <button type="submit" style="width: 100%; padding: 10px; background: #007bff; color: white; border: none; border-radius: 5px; font-size: 16px; margin-top: 15px; cursor: pointer;">
+        Proceed
+    </button>
+</form>
